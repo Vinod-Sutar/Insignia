@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="L52-RS-JLX">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Master Navigation Controller-->
+        <scene sceneID="2SX-hg-1oT">
+            <objects>
+                <navigationController extendedLayoutIncludesOpaqueBars="YES" id="Hph-bd-itF" customClass="VSMasterNavigationController" customModule="Insignia" customModuleProvider="target" sceneMemberID="viewController">
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="Bb6-4t-4q2" customClass="VSNavigationBar" customModule="Insignia" customModuleProvider="target">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <outlet property="masterNavigationBar" destination="Bb6-4t-4q2" id="fcm-aM-DFZ"/>
+                        <segue destination="Jbp-Wx-998" kind="relationship" relationship="rootViewController" id="oR9-zE-aWi"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QIC-UO-oSL" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="844" y="-442"/>
+        </scene>
+        <!--App List View Controller-->
+        <scene sceneID="R96-VO-0MA">
+            <objects>
+                <viewController id="Jbp-Wx-998" customClass="AppListViewController" customModule="Insignia" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="xR2-b4-7fZ"/>
+                        <viewControllerLayoutGuide type="bottom" id="0jN-Tp-awC"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="f00-RI-zbx">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="r34-fP-spk">
+                                <rect key="frame" x="0.0" y="44" width="375" height="623"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="20" minimumInteritemSpacing="15" id="lsb-1y-FA1">
+                                    <size key="itemSize" width="60" height="60"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="15" minY="20" maxX="15" maxY="20"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="AppCollectionViewCell" id="Sh2-Ti-wDM" customClass="AppCollectionViewCell" customModule="Insignia" customModuleProvider="target">
+                                        <rect key="frame" x="15" y="20" width="80" height="80"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="80" height="80"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hbP-9Y-4xd">
+                                                    <rect key="frame" x="0.0" y="0.0" width="80" height="80"/>
+                                                    <subviews>
+                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Jw1-dQ-OZZ">
+                                                            <rect key="frame" x="0.0" y="0.0" width="80" height="80"/>
+                                                            <userDefinedRuntimeAttributes>
+                                                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                                    <integer key="value" value="13"/>
+                                                                </userDefinedRuntimeAttribute>
+                                                            </userDefinedRuntimeAttributes>
+                                                        </imageView>
+                                                    </subviews>
+                                                    <constraints>
+                                                        <constraint firstAttribute="bottom" secondItem="Jw1-dQ-OZZ" secondAttribute="bottom" id="6ac-FJ-eSq"/>
+                                                        <constraint firstItem="Jw1-dQ-OZZ" firstAttribute="top" secondItem="hbP-9Y-4xd" secondAttribute="top" id="ph9-Ab-ufv"/>
+                                                        <constraint firstAttribute="trailing" secondItem="Jw1-dQ-OZZ" secondAttribute="trailing" id="rkQ-IT-L19"/>
+                                                        <constraint firstItem="Jw1-dQ-OZZ" firstAttribute="leading" secondItem="hbP-9Y-4xd" secondAttribute="leading" id="zbP-NE-nQJ"/>
+                                                    </constraints>
+                                                </view>
+                                            </subviews>
+                                        </view>
+                                        <constraints>
+                                            <constraint firstAttribute="bottom" secondItem="hbP-9Y-4xd" secondAttribute="bottom" id="3h3-jd-1H8"/>
+                                            <constraint firstItem="hbP-9Y-4xd" firstAttribute="top" secondItem="Sh2-Ti-wDM" secondAttribute="top" id="539-sb-sga"/>
+                                            <constraint firstItem="hbP-9Y-4xd" firstAttribute="top" secondItem="Sh2-Ti-wDM" secondAttribute="top" id="7sJ-T2-UXP"/>
+                                            <constraint firstAttribute="bottom" secondItem="hbP-9Y-4xd" secondAttribute="bottom" id="NsZ-Vj-ZVY"/>
+                                            <constraint firstAttribute="trailing" secondItem="hbP-9Y-4xd" secondAttribute="trailing" id="d9E-wM-JYp"/>
+                                            <constraint firstItem="hbP-9Y-4xd" firstAttribute="leading" secondItem="Sh2-Ti-wDM" secondAttribute="leading" id="gHY-aI-Jfr"/>
+                                            <constraint firstAttribute="trailing" secondItem="hbP-9Y-4xd" secondAttribute="trailing" id="jvv-AV-6Ie"/>
+                                            <constraint firstItem="hbP-9Y-4xd" firstAttribute="leading" secondItem="Sh2-Ti-wDM" secondAttribute="leading" id="vZC-K5-XDF"/>
+                                        </constraints>
+                                        <size key="customSize" width="80" height="80"/>
+                                        <connections>
+                                            <outlet property="appImageView" destination="Jw1-dQ-OZZ" id="zyG-6a-OGX"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="Jbp-Wx-998" id="XOC-VO-Hso"/>
+                                    <outlet property="delegate" destination="Jbp-Wx-998" id="Mb9-6r-dKa"/>
+                                </connections>
+                            </collectionView>
+                            <searchBar contentMode="redraw" placeholder="Search" translatesAutoresizingMaskIntoConstraints="NO" id="wdJ-VN-JqF">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="wdJ-VN-JqF" secondAttribute="trailing" id="6D4-Th-7Ja"/>
+                            <constraint firstItem="wdJ-VN-JqF" firstAttribute="top" secondItem="xR2-b4-7fZ" secondAttribute="bottom" id="FVn-cl-X2s"/>
+                            <constraint firstAttribute="trailing" secondItem="r34-fP-spk" secondAttribute="trailing" id="Hw5-ee-7YS"/>
+                            <constraint firstItem="wdJ-VN-JqF" firstAttribute="leading" secondItem="f00-RI-zbx" secondAttribute="leading" id="Iyl-XW-MmA"/>
+                            <constraint firstItem="r34-fP-spk" firstAttribute="leading" secondItem="f00-RI-zbx" secondAttribute="leading" id="T1F-gc-vpZ"/>
+                            <constraint firstItem="r34-fP-spk" firstAttribute="top" secondItem="wdJ-VN-JqF" secondAttribute="bottom" id="uMb-BU-eM1"/>
+                            <constraint firstItem="0jN-Tp-awC" firstAttribute="top" secondItem="r34-fP-spk" secondAttribute="bottom" id="uyh-cU-f47"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="EUJ-J3-2DT"/>
+                    <nil key="simulatedStatusBarMetrics"/>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <connections>
+                        <outlet property="appCollectionView" destination="r34-fP-spk" id="Xx8-xz-GNJ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Qk8-yo-Hwq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1756" y="-442"/>
+        </scene>
+        <!--Detail Navigation Controller-->
+        <scene sceneID="WM6-fZ-4KQ">
+            <objects>
+                <navigationController id="HmR-b5-Yby" customClass="VSDetailNavigationController" customModule="Insignia" customModuleProvider="target" sceneMemberID="viewController">
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="VYd-Sz-sIo" customClass="VSNavigationBar" customModule="Insignia" customModuleProvider="target">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <outlet property="detailNavigationBar" destination="VYd-Sz-sIo" id="FMk-OT-hH6"/>
+                        <segue destination="Q9F-3r-wdX" kind="relationship" relationship="rootViewController" id="RbU-xe-BY8"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yUH-vC-aOw" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="844" y="347"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="UPu-9W-ZfW">
+            <objects>
+                <viewController id="Q9F-3r-wdX" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="SXm-78-Lr3"/>
+                        <viewControllerLayoutGuide type="bottom" id="aHm-aA-wq3"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="01x-gf-mWV">
+                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="qhN-EK-28X"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bcu-0s-IQy" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1756" y="347"/>
+        </scene>
+        <!--Split View Controller-->
+        <scene sceneID="JiN-5E-PGP">
+            <objects>
+                <splitViewController extendedLayoutIncludesOpaqueBars="YES" id="L52-RS-JLX" customClass="VSSplitViewController" customModule="Insignia" customModuleProvider="target" sceneMemberID="viewController">
+                    <connections>
+                        <segue destination="Hph-bd-itF" kind="relationship" relationship="masterViewController" id="Uo1-Yi-pbt"/>
+                        <segue destination="HmR-b5-Yby" kind="relationship" relationship="detailViewController" id="txe-vM-DGg"/>
+                    </connections>
+                </splitViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="OQx-ih-xMf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-108" y="-115"/>
+        </scene>
+    </scenes>
+</document>
