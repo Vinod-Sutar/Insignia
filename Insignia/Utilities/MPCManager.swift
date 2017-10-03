@@ -80,8 +80,8 @@ extension MPCManager: MCSessionDelegate {
         
     }
     
-    public func session(_ session: MCSession, didFinishReceivingResourceWithName resourceName: String, fromPeer peerID: MCPeerID, at localURL: URL, withError error: Error?) {
-        
+    public func session(_ session: MCSession, didFinishReceivingResourceWithName resourceName: String, fromPeer peerID: MCPeerID, at localURL: URL?, withError error: Error?) {
+
         if resourceName.hasPrefix("image--") {
             
             if resourceName.hasPrefix("image--appIcon_") {
@@ -92,7 +92,7 @@ extension MPCManager: MCSessionDelegate {
                     
                     if app.projectId == projectId {
                         
-                        app.setAppIcon(localURL)
+                        app.setAppIcon(localURL!)
                         
                         AppListManager.shared.reloadAppsList()
                     }
@@ -102,12 +102,12 @@ extension MPCManager: MCSessionDelegate {
         else if resourceName.hasPrefix("json--") {
             
             
-            AppListManager.shared.saveAppsJson(url: localURL)
+            AppListManager.shared.saveAppsJson(url: localURL!)
         }
         
         do {
             
-            try FileManager.default.removeItem(at: localURL)
+            try FileManager.default.removeItem(at: localURL!)
         }
         catch {
             
